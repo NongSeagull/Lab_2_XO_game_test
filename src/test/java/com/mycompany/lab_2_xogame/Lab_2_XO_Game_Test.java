@@ -109,20 +109,30 @@ public class Lab_2_XO_Game_Test {
         assertEquals(expected, result);
     }
 
-    /**
-     * Test of checkExitPosition method, of class Lab_2_XOgame.
-     */
     @Test
-    public void testCheckExitPosition() {
-        System.out.println("checkExitPosition");
-        char[][] board = null;
-        int position1 = 0;
-        int position2 = 0;
-        boolean expResult = false;
+    public void testCheckExitPosition_Position1and2IsExit_IsTrue() {
+
+        char[][] board = {{'X', 'O', 'X'}, {'-', '-', '-'}, {'-', '-', 'O'}};
+        int position1 = 1;
+        int position2 = 1;
+
+        boolean expected = true;
         boolean result = Lab_2_XO_game.checkExitPosition(board, position1, position2);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void testCheckExitPosition_Position1and2IsNotExit_IsFalse() {
+
+        char[][] board = {{'X', 'O', 'X'}, {'-', '-', '-'}, {'-', '-', 'O'}};
+        int position1 = 2;
+        int position2 = 2;
+
+        boolean expected = false;
+        boolean result = Lab_2_XO_game.checkExitPosition(board, position1, position2);
+
+        assertEquals(expected, result);
     }
 
     /**
