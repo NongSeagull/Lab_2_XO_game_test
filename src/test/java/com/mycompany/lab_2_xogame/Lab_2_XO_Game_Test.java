@@ -476,17 +476,4 @@ public class Lab_2_XO_Game_Test {
 
         assertEquals(expected, result);
     }
-
-    /**
-     * Test of main method, of class Lab_2_XOgame.
-     */
-    @Test
-    public void testMain() {
-        System.out.println("main");
-        String[] args = null;
-        Lab_2_XO_game.main(args);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
 }
