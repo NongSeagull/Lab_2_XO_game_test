@@ -26,6 +26,17 @@ public class Lab_2_XO_Game_Test {
         
         assertEquals(expected, result);
     }
+    
+        @Test
+    public void testCurrentPlayer_InputIsFalse_PlayerIsO() {
+        
+        boolean checkPlayer = false;
+        
+        char expected = 'O';
+        char result = Lab_2_XO_game.currentPlayer(checkPlayer);
+        
+        assertEquals(expected, result);
+    }
 
     /**
      * Test of switchPlayer method, of class Lab_2_XOgame.
