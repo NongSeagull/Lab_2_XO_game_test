@@ -38,20 +38,28 @@ public class Lab_2_XO_Game_Test {
         assertEquals(expected, result);
     }
 
-    /**
-     * Test of switchPlayer method, of class Lab_2_XOgame.
-     */
-    @Test
-    public void testSwitchPlayer() {
-        System.out.println("switchPlayer");
-        char player = ' ';
-        boolean expResult = false;
-        boolean result = Lab_2_XO_game.switchPlayer(player);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
+        @Test
+    public void testSwitchPlayer_InputIsX_ResultIsFalse() {
 
+        char player = 'X';
+
+        boolean expected = false;
+        boolean result = Lab_2_XO_game.switchPlayer(player);
+        
+        assertEquals(expected, result);
+    }
+    
+    @Test
+    public void testSwitchPlayer_InputIsO_ResultIsTrue() {
+
+        char player = 'O';
+
+        boolean expected = true;
+        boolean result = Lab_2_XO_game.switchPlayer(player);
+        
+        assertEquals(expected, result);
+    }
+    
     /**
      * Test of addMovePlayerToBoard method, of class Lab_2_XOgame.
      */
