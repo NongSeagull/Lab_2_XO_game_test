@@ -307,6 +307,30 @@ public class Lab_2_XO_Game_Test {
         assertEquals(expected, result);
     }
 
+    @Test
+    public void testCheckColWinner_OWinInCol1_IsSuccess() {
+
+        char[][] board = {{'O', 'X', 'O'}, {'O', 'X', 'X'}, {'O', '-', '-'}};
+        char player = 'O';
+
+        boolean expected = true;
+        boolean result = Lab_2_XO_game.checkColWinner(board, player);
+
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void testCheckColWinner_OWinInCol1_IsFail() {
+
+        char[][] board = {{'O', 'X', 'O'}, {'O', 'X', 'X'}, {'X', '-', '-'}};
+        char player = 'O';
+
+        boolean expected = false;
+        boolean result = Lab_2_XO_game.checkColWinner(board, player);
+
+        assertEquals(expected, result);
+    }
+
     /**
      * Test of checkDiagonalWinner method, of class Lab_2_XOgame.
      */
