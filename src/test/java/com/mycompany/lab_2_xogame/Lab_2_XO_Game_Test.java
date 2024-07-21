@@ -137,7 +137,7 @@ public class Lab_2_XO_Game_Test {
 
     //Row 1, X and O, Win and Not
     @Test
-    public void testCheckRowWinner_XIsWinInRow1_IsSuccess() {
+    public void testCheckRowWinner_XWinInRow1_IsSuccess() {
 
         char[][] board = {{'X', 'X', 'X'}, {'-', 'O', '-'}, {'-', '-', 'O'}};
         char player = 'X';
@@ -149,7 +149,7 @@ public class Lab_2_XO_Game_Test {
     }
 
     @Test
-    public void testCheckRowWinner_XIsNotWinInRow1_IsFail() {
+    public void testCheckRowWinner_XNotWinInRow1_IsFail() {
 
         char[][] board = {{'X', 'X', '-'}, {'-', 'O', 'X'}, {'-', '-', 'O'}};
         char player = 'X';
@@ -161,7 +161,7 @@ public class Lab_2_XO_Game_Test {
     }
 
     @Test
-    public void testCheckRowWinner_OIsWinInRow1_IsSuccess() {
+    public void testCheckRowWinner_OWinInRow1_IsSuccess() {
 
         char[][] board = {{'O', 'O', 'O'}, {'X', 'X', '-'}, {'-', 'X', '-'}};
         char player = 'O';
@@ -173,7 +173,7 @@ public class Lab_2_XO_Game_Test {
     }
 
     @Test
-    public void testCheckRowWinner_OIsNotWinInRow1_IsFail() {
+    public void testCheckRowWinner_ONotWinInRow1_IsFail() {
 
         char[][] board = {{'X', 'O', '-'}, {'-', 'O', 'X'}, {'X', '-', 'O'}};
         char player = 'O';
@@ -186,7 +186,7 @@ public class Lab_2_XO_Game_Test {
 
     //Row 2, X and O, Win and Not
     @Test
-    public void testCheckRowWinner_XIsWinInRow2_IsSuccess() {
+    public void testCheckRowWinner_XWinInRow2_IsSuccess() {
 
         char[][] board = {{'X', 'O', 'O'}, {'X', 'X', 'X'}, {'-', '-', 'O'}};
         char player = 'X';
@@ -198,7 +198,7 @@ public class Lab_2_XO_Game_Test {
     }
 
     @Test
-    public void testCheckRowWinner_XIsNotWinInRow2_IsFail() {
+    public void testCheckRowWinner_XNotWinInRow2_IsFail() {
 
         char[][] board = {{'X', '-', 'O'}, {'X', 'X', '-'}, {'O', '-', 'O'}};
         char player = 'X';
@@ -210,7 +210,7 @@ public class Lab_2_XO_Game_Test {
     }
 
     @Test
-    public void testCheckRowWinner_OIsWinInRow2_IsSuccess() {
+    public void testCheckRowWinner_OWinInRow2_IsSuccess() {
 
         char[][] board = {{'X', '-', 'X'}, {'O', 'O', 'O'}, {'-', 'X', '-'}};
         char player = 'O';
@@ -222,7 +222,7 @@ public class Lab_2_XO_Game_Test {
     }
 
     @Test
-    public void testCheckRowWinner_OIsNotWinInRow2_IsFail() {
+    public void testCheckRowWinner_ONotWinInRow2_IsFail() {
 
         char[][] board = {{'X', '-', 'X'}, {'O', 'O', '-'}, {'-', 'X', '-'}};
         char player = 'O';
@@ -235,7 +235,7 @@ public class Lab_2_XO_Game_Test {
 
     //Row 3, X and O, Win and Not
     @Test
-    public void testCheckRowWinner_XIsWinInRow3_IsSuccess() {
+    public void testCheckRowWinner_XWinInRow3_IsSuccess() {
 
         char[][] board = {{'X', 'O', '-'}, {'O', '-', 'O'}, {'X', 'X', 'X'}};
         char player = 'X';
@@ -247,7 +247,7 @@ public class Lab_2_XO_Game_Test {
     }
 
     @Test
-    public void testCheckRowWinner_XIsNotWinInRow3_IsFail() {
+    public void testCheckRowWinner_XNotWinInRow3_IsFail() {
 
         char[][] board = {{'X', 'O', '-'}, {'O', '-', '-'}, {'-', 'X', 'X'}};
         char player = 'X';
@@ -259,7 +259,7 @@ public class Lab_2_XO_Game_Test {
     }
 
     @Test
-    public void testCheckRowWinner_OIsWinInRow3_IsSuccess() {
+    public void testCheckRowWinner_OWinInRow3_IsSuccess() {
 
         char[][] board = {{'X', '-', 'X'}, {'-', 'X', '-'}, {'O', 'O', 'O'}};
         char player = 'O';
@@ -271,7 +271,7 @@ public class Lab_2_XO_Game_Test {
     }
 
     @Test
-    public void testCheckRowWinner_OIsNotWinInRow3_IsFail() {
+    public void testCheckRowWinner_ONotWinInRow3_IsFail() {
 
         char[][] board = {{'X', '-', 'X'}, {'-', 'X', '-'}, {'-', 'O', 'O'}};
         char player = 'O';
@@ -282,19 +282,29 @@ public class Lab_2_XO_Game_Test {
         assertEquals(expected, result);
     }
 
-    /**
-     * Test of checkColWinner method, of class Lab_2_XOgame.
-     */
+    //Column 1, X and O, Win and Not
     @Test
-    public void testCheckColWinner() {
-        System.out.println("checkColWinner");
-        char[][] board = null;
-        char player = ' ';
-        boolean expResult = false;
+    public void testCheckColWinner_XWinInCol1_IsSuccess() {
+
+        char[][] board = {{'X', '-', 'O'}, {'X', 'O', '-'}, {'X', '-', '-'}};
+        char player = 'X';
+
+        boolean expected = true;
         boolean result = Lab_2_XO_game.checkColWinner(board, player);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void testCheckColWinner_XWinInCol1_IsFail() {
+
+        char[][] board = {{'X', 'X', 'O'}, {'X', 'O', '-'}, {'O', '-', '-'}};
+        char player = 'X';
+
+        boolean expected = false;
+        boolean result = Lab_2_XO_game.checkColWinner(board, player);
+
+        assertEquals(expected, result);
     }
 
     /**
