@@ -16,52 +16,15 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author 65160230 Piyapong
  */
 public class Lab_2_XO_Game_Test {
-
-    @Test
-    public void testSetUpBoard() {
-        System.out.println("setUpBoard");
-        char[][] board = null;
-        Lab_2_XO_game.setUpBoard(board);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of printBoard method, of class Lab_2_XOgame.
-     */
-    @Test
-    public void testPrintBoard() {
-        System.out.println("printBoard");
-        char[][] board = null;
-        Lab_2_XO_game.printBoard(board);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of checkPlayerTurn method, of class Lab_2_XOgame.
-     */
-    @Test
-    public void testCheckPlayerTurn() {
-        System.out.println("checkPlayerTurn");
-        char player = ' ';
-        Lab_2_XO_game.checkPlayerTurn(player);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
-    }
-
-    /**
-     * Test of currentPlayer method, of class Lab_2_XOgame.
-     */
-    @Test
-    public void testCurrentPlayer() {
-        System.out.println("currentPlayer");
-        boolean checkPlayer = false;
-        char expResult = ' ';
+@Test
+    public void testCurrentPlayer_InputIsTrue_PlayerIsX() {
+        
+        boolean checkPlayer = true;
+        
+        char expected = 'X';
         char result = Lab_2_XO_game.currentPlayer(checkPlayer);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+        
+        assertEquals(expected, result);
     }
 
     /**
