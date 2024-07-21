@@ -135,19 +135,52 @@ public class Lab_2_XO_Game_Test {
         assertEquals(expected, result);
     }
 
-    /**
-     * Test of checkRowWinner method, of class Lab_2_XOgame.
-     */
     @Test
-    public void testCheckRowWinner() {
-        System.out.println("checkRowWinner");
-        char[][] board = null;
-        char player = ' ';
-        boolean expResult = false;
+    public void testCheckRowWinner_XIsWinInRow1_IsSuccess() {
+
+        char[][] board = {{'X', 'X', 'X'}, {'-', 'O', '-'}, {'-', '-', 'O'}};
+        char player = 'X';
+
+        boolean expected = true;
         boolean result = Lab_2_XO_game.checkRowWinner(board, player);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void testCheckRowWinner_XIsNotWinInRow1_IsFail() {
+
+        char[][] board = {{'X', 'X', '-'}, {'-', 'O', 'X'}, {'-', '-', 'O'}};
+        char player = 'X';
+
+        boolean expected = false;
+        boolean result = Lab_2_XO_game.checkRowWinner(board, player);
+
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void testCheckRowWinner_OIsWinInRow1_IsSuccess() {
+
+        char[][] board = {{'O', 'O', 'O'}, {'X', 'X', '-'}, {'-', 'X', '-'}};
+        char player = 'O';
+
+        boolean expected = true;
+        boolean result = Lab_2_XO_game.checkRowWinner(board, player);
+
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void testCheckRowWinner_OIsNotWinInRow1_IsFail() {
+
+        char[][] board = {{'X', 'O', '-'}, {'-', 'O', 'X'}, {'X', '-', 'O'}};
+        char player = 'O';
+
+        boolean expected = false;
+        boolean result = Lab_2_XO_game.checkRowWinner(board, player);
+
+        assertEquals(expected, result);
     }
 
     /**
