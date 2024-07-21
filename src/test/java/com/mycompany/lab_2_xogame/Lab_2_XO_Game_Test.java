@@ -13,37 +13,15 @@ import static org.junit.jupiter.api.Assertions.*;
 
 /**
  *
- * @author tsuna
+ * @author 65160230 Piyapong
  */
-public class Lab_2_XOgameTest {
-    
-    public Lab_2_XOgameTest() {
-    }
-    
-    @BeforeAll
-    public static void setUpClass() {
-    }
-    
-    @AfterAll
-    public static void tearDownClass() {
-    }
-    
-    @BeforeEach
-    public void setUp() {
-    }
-    
-    @AfterEach
-    public void tearDown() {
-    }
+public class Lab_2_XO_Game_Test {
 
-    /**
-     * Test of setUpBoard method, of class Lab_2_XOgame.
-     */
     @Test
     public void testSetUpBoard() {
         System.out.println("setUpBoard");
         char[][] board = null;
-        Lab_2_XOgame.setUpBoard(board);
+        Lab_2_XO_game.setUpBoard(board);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
@@ -55,7 +33,7 @@ public class Lab_2_XOgameTest {
     public void testPrintBoard() {
         System.out.println("printBoard");
         char[][] board = null;
-        Lab_2_XOgame.printBoard(board);
+        Lab_2_XO_game.printBoard(board);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
@@ -67,7 +45,7 @@ public class Lab_2_XOgameTest {
     public void testCheckPlayerTurn() {
         System.out.println("checkPlayerTurn");
         char player = ' ';
-        Lab_2_XOgame.checkPlayerTurn(player);
+        Lab_2_XO_game.checkPlayerTurn(player);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
@@ -80,7 +58,7 @@ public class Lab_2_XOgameTest {
         System.out.println("currentPlayer");
         boolean checkPlayer = false;
         char expResult = ' ';
-        char result = Lab_2_XOgame.currentPlayer(checkPlayer);
+        char result = Lab_2_XO_game.currentPlayer(checkPlayer);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -94,7 +72,7 @@ public class Lab_2_XOgameTest {
         System.out.println("switchPlayer");
         char player = ' ';
         boolean expResult = false;
-        boolean result = Lab_2_XOgame.switchPlayer(player);
+        boolean result = Lab_2_XO_game.switchPlayer(player);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -110,7 +88,7 @@ public class Lab_2_XOgameTest {
         int position1 = 0;
         int position2 = 0;
         char player = ' ';
-        Lab_2_XOgame.addMovePlayerToBoard(board, position1, position2, player);
+        Lab_2_XO_game.addMovePlayerToBoard(board, position1, position2, player);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
@@ -123,7 +101,7 @@ public class Lab_2_XOgameTest {
         System.out.println("checkBoardFull");
         char[][] board = null;
         String expResult = "";
-        String result = Lab_2_XOgame.checkBoardFull(board);
+        String result = Lab_2_XO_game.checkBoardFull(board);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -139,7 +117,7 @@ public class Lab_2_XOgameTest {
         int position1 = 0;
         int position2 = 0;
         boolean expResult = false;
-        boolean result = Lab_2_XOgame.checkPositionOutOfBounds(board, position1, position2);
+        boolean result = Lab_2_XO_game.checkPositionOutOfBounds(board, position1, position2);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -155,7 +133,7 @@ public class Lab_2_XOgameTest {
         int position1 = 0;
         int position2 = 0;
         boolean expResult = false;
-        boolean result = Lab_2_XOgame.checkExitPosition(board, position1, position2);
+        boolean result = Lab_2_XO_game.checkExitPosition(board, position1, position2);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -170,7 +148,7 @@ public class Lab_2_XOgameTest {
         char[][] board = null;
         char player = ' ';
         boolean expResult = false;
-        boolean result = Lab_2_XOgame.checkRowWinner(board, player);
+        boolean result = Lab_2_XO_game.checkRowWinner(board, player);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -185,7 +163,7 @@ public class Lab_2_XOgameTest {
         char[][] board = null;
         char player = ' ';
         boolean expResult = false;
-        boolean result = Lab_2_XOgame.checkColWinner(board, player);
+        boolean result = Lab_2_XO_game.checkColWinner(board, player);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -200,7 +178,7 @@ public class Lab_2_XOgameTest {
         char[][] board = null;
         char player = ' ';
         boolean expResult = false;
-        boolean result = Lab_2_XOgame.checkDiagonalWinner(board, player);
+        boolean result = Lab_2_XO_game.checkDiagonalWinner(board, player);
         assertEquals(expResult, result);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
@@ -213,7 +191,7 @@ public class Lab_2_XOgameTest {
     public void testMain() {
         System.out.println("main");
         String[] args = null;
-        Lab_2_XOgame.main(args);
+        Lab_2_XO_game.main(args);
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }

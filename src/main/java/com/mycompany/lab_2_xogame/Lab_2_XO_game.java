@@ -9,7 +9,7 @@ import java.util.*;
  *
  * @author 65160230 Piyapong
  */
-public class Lab_2_XOgame {
+public class Lab_2_XO_game {
 
     //method
     public static void setUpBoard(char[][] board) {
