@@ -135,6 +135,7 @@ public class Lab_2_XO_Game_Test {
         assertEquals(expected, result);
     }
 
+    //Row 1, X and O, Win and Not
     @Test
     public void testCheckRowWinner_XIsWinInRow1_IsSuccess() {
 
@@ -175,6 +176,55 @@ public class Lab_2_XO_Game_Test {
     public void testCheckRowWinner_OIsNotWinInRow1_IsFail() {
 
         char[][] board = {{'X', 'O', '-'}, {'-', 'O', 'X'}, {'X', '-', 'O'}};
+        char player = 'O';
+
+        boolean expected = false;
+        boolean result = Lab_2_XO_game.checkRowWinner(board, player);
+
+        assertEquals(expected, result);
+    }
+
+    //Row 2, X and O, Win and Not
+    @Test
+    public void testCheckRowWinner_XIsWinInRow2_IsSuccess() {
+
+        char[][] board = {{'X', 'O', 'O'}, {'X', 'X', 'X'}, {'-', '-', 'O'}};
+        char player = 'X';
+
+        boolean expected = true;
+        boolean result = Lab_2_XO_game.checkRowWinner(board, player);
+
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void testCheckRowWinner_XIsNotWinInRow2_IsFail() {
+
+        char[][] board = {{'X', '-', 'O'}, {'X', 'X', '-'}, {'O', '-', 'O'}};
+        char player = 'X';
+
+        boolean expected = false;
+        boolean result = Lab_2_XO_game.checkRowWinner(board, player);
+
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void testCheckRowWinner_OIsWinInRow2_IsSuccess() {
+
+        char[][] board = {{'X', '-', 'X'}, {'O', 'O', 'O'}, {'-', 'X', '-'}};
+        char player = 'O';
+
+        boolean expected = true;
+        boolean result = Lab_2_XO_game.checkRowWinner(board, player);
+
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void testCheckRowWinner_OIsNotWinInRow2_IsFail() {
+
+        char[][] board = {{'X', '-', 'X'}, {'O', 'O', '-'}, {'-', 'X', '-'}};
         char player = 'O';
 
         boolean expected = false;
