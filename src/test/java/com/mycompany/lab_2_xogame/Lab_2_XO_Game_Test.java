@@ -83,20 +83,30 @@ public class Lab_2_XO_Game_Test {
         assertEquals(expected, result);
     }
 
-    /**
-     * Test of checkPositionOutOfBounds method, of class Lab_2_XOgame.
-     */
     @Test
-    public void testCheckPositionOutOfBounds() {
-        System.out.println("checkPositionOutOfBounds");
-        char[][] board = null;
+    public void testCheckPositionOutOfBounds_PositionIsNot1to3_IsTrue() {
+
+        char[][] board = {{'-', '-', 'X'}, {'O', '-', 'X'}, {'O', 'X', 'O'}};
         int position1 = 0;
-        int position2 = 0;
-        boolean expResult = false;
+        int position2 = 4;
+
+        boolean expected = true;
         boolean result = Lab_2_XO_game.checkPositionOutOfBounds(board, position1, position2);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void testCheckPositionOutOfBounds_PositionIs1to3_IsFalse() {
+
+        char[][] board = {{'-', '-', 'X'}, {'O', '-', 'X'}, {'O', 'X', 'O'}};
+        int position1 = 1;
+        int position2 = 1;
+
+        boolean expected = false;
+        boolean result = Lab_2_XO_game.checkPositionOutOfBounds(board, position1, position2);
+
+        assertEquals(expected, result);
     }
 
     /**
