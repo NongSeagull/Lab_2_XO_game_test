@@ -429,19 +429,52 @@ public class Lab_2_XO_Game_Test {
         assertEquals(expected, result);
     }
 
-    /**
-     * Test of checkDiagonalWinner method, of class Lab_2_XOgame.
-     */
     @Test
-    public void testCheckDiagonalWinner() {
-        System.out.println("checkDiagonalWinner");
-        char[][] board = null;
-        char player = ' ';
-        boolean expResult = false;
+    public void testCheckDiagonalWinner_XWin_IsSuccess() {
+
+        char[][] board = {{'X', 'O', 'O'}, {'-', 'X', '-'}, {'-', '-', 'X'}};
+        char player = 'X';
+
+        boolean expected = true;
         boolean result = Lab_2_XO_game.checkDiagonalWinner(board, player);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void testCheckDiagonalWinner_XNotWin_IsFail() {
+
+        char[][] board = {{'X', 'O', '-'}, {'-', 'O', '-'}, {'-', '-', 'X'}};
+        char player = 'X';
+
+        boolean expected = false;
+        boolean result = Lab_2_XO_game.checkDiagonalWinner(board, player);
+
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void testCheckDiagonalWinner_OWin_IsSuccess() {
+
+        char[][] board = {{'O', 'X', 'X'}, {'-', 'O', 'X'}, {'-', '-', 'O'}};
+        char player = 'O';
+
+        boolean expected = true;
+        boolean result = Lab_2_XO_game.checkDiagonalWinner(board, player);
+
+        assertEquals(expected, result);
+    }
+
+    @Test
+    public void testCheckDiagonalWinner_ONotWin_IsFail() {
+
+        char[][] board = {{'O', 'O', 'X'}, {'-', 'X', '-'}, {'-', '-', 'O'}};
+        char player = 'O';
+
+        boolean expected = false;
+        boolean result = Lab_2_XO_game.checkDiagonalWinner(board, player);
+
+        assertEquals(expected, result);
     }
 
     /**
