@@ -61,7 +61,7 @@ public class Lab_2_XO_game {
         }
     }
 
-    public static void addMovePlayerToBoard(char[][] board, int position1, int position2, char player) {
+    public static void addMovePlayer(char[][] board, int position1, int position2, char player) {
         board[position1 - 1][position2 - 1] = player;
     }
 
@@ -92,9 +92,9 @@ public class Lab_2_XO_game {
     }
 
     public static boolean checkRowWinner(char[][] board, char player) {
-        int col;
-        for (col = 0; col < board.length; col++) {
-            if (board[0][col] == player && board[1][col] == player && board[2][col] == player) {
+        int row;
+        for (row = 0; row < board.length; row++) {
+            if (board[row][0] == player && board[row][1] == player && board[row][2] == player) {
                 return true;
             }
         }
@@ -102,9 +102,9 @@ public class Lab_2_XO_game {
     }
 
     public static boolean checkColWinner(char[][] board, char player) {
-        int row;
-        for (row = 0; row < board.length; row++) {
-            if (board[row][0] == player && board[row][1] == player && board[row][2] == player) {
+        int col;
+        for (col = 0; col < board.length; col++) {
+            if (board[0][col] == player && board[1][col] == player && board[2][col] == player) {
                 return true;
             }
         }
@@ -120,7 +120,7 @@ public class Lab_2_XO_game {
         return false;
     }
 
-    //class main
+    //main
     public static void main(String[] args) {
         //variable
         /*scanner*/
@@ -176,13 +176,14 @@ public class Lab_2_XO_game {
                 continue;
             } else {
                 //add player to board
-                addMovePlayerToBoard(board, position1, position2, player);
+                addMovePlayer(board, position1, position2, player);
 
                 /*check player are win or not*/
                 //if player have win program will show board, show winner and end game
                 if (checkRowWinner(board, player)) {
                     printBoard(board);
                     System.out.println("-- " + player + " wins with a row win --");
+                    break;
                 } else if (checkColWinner(board, player)) {
                     printBoard(board);
                     System.out.println("-- " + player + " wins with a column win --");
