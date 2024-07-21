@@ -16,39 +16,40 @@ import static org.junit.jupiter.api.Assertions.*;
  * @author 65160230 Piyapong
  */
 public class Lab_2_XO_Game_Test {
-@Test
+
+    @Test
     public void testCurrentPlayer_InputIsTrue_PlayerIsX() {
-        
+
         boolean checkPlayer = true;
-        
+
         char expected = 'X';
         char result = Lab_2_XO_game.currentPlayer(checkPlayer);
-        
-        assertEquals(expected, result);
-    }
-    
-        @Test
-    public void testCurrentPlayer_InputIsFalse_PlayerIsO() {
-        
-        boolean checkPlayer = false;
-        
-        char expected = 'O';
-        char result = Lab_2_XO_game.currentPlayer(checkPlayer);
-        
+
         assertEquals(expected, result);
     }
 
-        @Test
+    @Test
+    public void testCurrentPlayer_InputIsFalse_PlayerIsO() {
+
+        boolean checkPlayer = false;
+
+        char expected = 'O';
+        char result = Lab_2_XO_game.currentPlayer(checkPlayer);
+
+        assertEquals(expected, result);
+    }
+
+    @Test
     public void testSwitchPlayer_InputIsX_ResultIsFalse() {
 
         char player = 'X';
 
         boolean expected = false;
         boolean result = Lab_2_XO_game.switchPlayer(player);
-        
+
         assertEquals(expected, result);
     }
-    
+
     @Test
     public void testSwitchPlayer_InputIsO_ResultIsTrue() {
 
@@ -56,37 +57,30 @@ public class Lab_2_XO_Game_Test {
 
         boolean expected = true;
         boolean result = Lab_2_XO_game.switchPlayer(player);
-        
+
         assertEquals(expected, result);
     }
-    
-    /**
-     * Test of addMovePlayerToBoard method, of class Lab_2_XOgame.
-     */
+
     @Test
-    public void testAddMovePlayerToBoard() {
-        System.out.println("addMovePlayerToBoard");
-        char[][] board = null;
-        int position1 = 0;
-        int position2 = 0;
-        char player = ' ';
-        Lab_2_XO_game.addMovePlayerToBoard(board, position1, position2, player);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+    public void testCheckBoardFull_AllPositionHaveElement_IsFull() {
+
+        char[][] board = {{'X', 'O', 'X'}, {'O', 'O', 'X'}, {'X', 'X', 'O'}};
+
+        String expected = "full";
+        String result = Lab_2_XO_game.checkBoardFull(board);
+
+        assertEquals(expected, result);
     }
 
-    /**
-     * Test of checkBoardFull method, of class Lab_2_XOgame.
-     */
     @Test
-    public void testCheckBoardFull() {
-        System.out.println("checkBoardFull");
-        char[][] board = null;
-        String expResult = "";
+    public void testCheckBoardFull_SomePositionHaveElement_IsNotFull() {
+
+        char[][] board = {{'-', 'O', 'X'}, {'O', '-', 'X'}, {'X', 'X', '-'}};
+
+        String expected = "not full";
         String result = Lab_2_XO_game.checkBoardFull(board);
-        assertEquals(expResult, result);
-        // TODO review the generated test code and remove the default call to fail.
-        fail("The test case is a prototype.");
+
+        assertEquals(expected, result);
     }
 
     /**
@@ -177,5 +171,5 @@ public class Lab_2_XO_Game_Test {
         // TODO review the generated test code and remove the default call to fail.
         fail("The test case is a prototype.");
     }
-    
+
 }
